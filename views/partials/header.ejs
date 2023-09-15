@@ -1,0 +1,67 @@
+<meta charset="UTF-8" />
+<title><%= pageName %></title>
+
+<!-- <link rel="stylesheet" href="../css/global.css" /> -->
+<!-- CSS (load bootstrap from a CDN) -->
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.min.css"
+/>
+<style>
+  html,
+  body {
+    margin: 0px;
+  }
+
+  ::-webkit-scrollbar {
+    display: none;
+  }
+
+  .page_content {
+    margin: 0px auto;
+    max-width: 1280px;
+  }
+
+  .card_slider {
+    display: flex;
+    column-gap: 10px;
+    width: 100%;
+    height: auto;
+    overflow-x: scroll;
+
+    > .offer_card {
+      min-width: 425px;
+      height: 252px;
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
+
+    > .category_card {
+      min-width: 150px;
+      height: 200px;
+      background: #ffffff;
+      background-size: contain;
+      background-repeat: no-repeat;
+    }
+  }
+
+  @media screen and (max-width: 460px) {
+    .page_content {
+      padding: 0 20px;
+      box-sizing: border-box;
+    }
+
+    .card_slider {
+      > .offer_card {
+        min-width: 304px;
+        height: 180px;
+        background-size: cover;
+        background-repeat: no-repeat;
+      }
+      > .category_card {
+        min-width: 100px;
+        height: 100px;
+      }
+    }
+  }
+</style>

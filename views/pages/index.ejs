@@ -1,11 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Hungry? Swiggy da!!</title>
+    <%- include("../partials/header.ejs") %>
   </head>
   <body>
-    <h1>Swiggy</h1>
+    <section class="page_content">
+      <h4 class="mb-3">Best offers for you</h4>
+      <div class="card_slider mb-4">
+        <% offers.forEach(function(offer) { %>
+        <div
+          class="offer_card"
+          style="background-image: url(<%= offer %>)"
+        ></div>
+        <% }); %>
+      </div>
+      <h4 class="mb-3">What's on your mind?</h4>
+      <div class="card_slider">
+        <% categories.forEach(function(category) { %>
+        <div
+          class="category_card"
+          style="background-image: url(<%= category %>)"
+        ></div>
+        <% }); %>
+      </div>
+    </section>
   </body>
 </html>

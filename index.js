@@ -1,7 +1,7 @@
 const express = require("express");
 const API_SERVER = require("./app");
 const WEB_SERVER = require("./web");
-const EJS_ENGINE = require("ejs");
+const BODY_PARSER = require("body-parser");
 
 // CONSTANTS
 const HTTP_SERVER = express();
@@ -10,6 +10,12 @@ const HOST = "0.0.0.0";
 
 // INJECTING THE DEPENDENCIES
 HTTP_SERVER.set("view engine", "ejs");
+
+// PARSER THE REQUEST AS application/json
+HTTP_SERVER.use(BODY_PARSER.json());
+
+// PARSER THE REQUEST AS application/x-www-form-urlencoded
+HTTP_SERVER.use(BODY_PARSER.urlencoded({ extended: true }));
 
 //localhost:5000/
 HTTP_SERVER.use("/api", API_SERVER);
