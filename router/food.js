@@ -39,7 +39,6 @@ FoodRouter.get("/", (request, response, next) => {
 });
 
 FoodRouter.get("/:id", async (request, response, next) => {
-  console.log("HIT");
   const { params } = request;
   const { id } = params;
 
